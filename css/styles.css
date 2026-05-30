@@ -617,9 +617,36 @@ h1, h2, h3 {
 .tasmania-copy p {
   font-size: 1.0625rem;
   color: var(--text-muted-dark);
-  margin-top: 1.75rem;
-  max-width: 400px;
+  margin-top: 1.25rem;
+  max-width: 440px;
   line-height: 1.65;
+}
+
+.tasmania-points {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  max-width: 440px;
+}
+
+.tasmania-points li {
+  font-size: 0.9375rem;
+  color: var(--text-muted-dark);
+  line-height: 1.55;
+  padding-left: 1.125rem;
+  position: relative;
+}
+
+.tasmania-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--beige-dark);
 }
 
 .tasmania-copy h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
@@ -627,24 +654,16 @@ h1, h2, h3 {
 .tasmania-visual {
   display: flex;
   justify-content: center;
+  align-items: center;
   will-change: transform;
 }
 
-.map-svg { width: 100%; max-width: 280px; opacity: 0.85; }
-
-.map-pin { animation: pinPulse 4s ease-in-out infinite; }
-.map-pin:nth-child(3) { animation-delay: 0.6s; }
-
-@keyframes pinPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-.map-label {
-  fill: rgba(255,255,255,0.4);
-  font-family: var(--font);
-  font-size: 10px;
-  font-weight: 500;
+.map-svg {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  opacity: 0.92;
+  filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.35));
 }
 
 /* ===== Founder ===== */
