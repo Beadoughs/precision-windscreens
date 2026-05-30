@@ -173,6 +173,16 @@ document.querySelectorAll(".btn").forEach((btn) => {
   });
 });
 
+// FAQ accordion — one open at a time
+document.querySelectorAll(".faq-item").forEach((item) => {
+  item.addEventListener("toggle", () => {
+    if (!item.open) return;
+    document.querySelectorAll(".faq-item").forEach((other) => {
+      if (other !== item) other.open = false;
+    });
+  });
+});
+
 // Contact form
 const form = document.getElementById("contact-form");
 const formNote = document.getElementById("form-note");
