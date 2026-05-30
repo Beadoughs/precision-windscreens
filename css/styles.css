@@ -365,13 +365,7 @@ h1, h2, h3 {
 
 /* ===== Sections ===== */
 .section {
-  padding: 0;
-}
-
-.section > .container,
-.section > .container-narrow {
-  padding-top: 1.5rem;
-  padding-bottom: 0;
+  padding: clamp(3rem, 6vw, 5rem) 0;
 }
 
 .section-alt { background: var(--beige-light); }
@@ -383,7 +377,7 @@ h1, h2, h3 {
 
 .split-header {
   max-width: 560px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .split-header--light .section-tag { color: var(--beige); }
@@ -654,8 +648,7 @@ h1, h2, h3 {
 }
 
 /* ===== Founder ===== */
-.section-founder > .container {
-  padding-top: 1.5rem;
+.section-founder {
   border-top: none;
 }
 
@@ -722,6 +715,16 @@ h1, h2, h3 {
 }
 
 /* ===== Brand Marquee ===== */
+.section-brands {
+  background: var(--beige-light);
+}
+
+.section-brands .brand-marquee {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .brand-marquee {
   margin-top: 1rem;
   padding-top: 1rem;
@@ -912,12 +915,7 @@ h1, h2, h3 {
 
 /* ===== CTA ===== */
 .cta {
-  padding: 0;
-}
-
-.cta > .container {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding: clamp(3rem, 6vw, 5rem) 0;
 }
 
 .cta-panel {
