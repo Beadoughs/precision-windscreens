@@ -168,10 +168,9 @@ h1, h2, h3 {
 .header.hero-visible:not(.scrolled) .logo-sub { color: rgba(246,244,241,0.5); }
 .header.hero-visible:not(.scrolled) .nav-links a { color: rgba(246,244,241,0.65); }
 .header.hero-visible:not(.scrolled) .nav-links a:hover { color: var(--warm-white); }
-.header.hero-visible:not(.scrolled) .logo-mark {
-  background: rgba(246,244,241,0.1);
-  color: var(--warm-white);
-  border: 1px solid rgba(246,244,241,0.15);
+.header.hero-visible:not(.scrolled) .logo-img {
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 .header.hero-visible:not(.scrolled) .btn-primary {
   background: var(--warm-white);
@@ -189,18 +188,12 @@ h1, h2, h3 {
 
 .logo { display: flex; align-items: center; gap: 0.625rem; }
 
-.logo-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: var(--ocean);
-  color: var(--warm-white);
-  border-radius: var(--radius);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  transition: all 0.35s;
+.logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: filter 0.35s, opacity 0.35s;
 }
 
 .logo-text {
@@ -654,6 +647,11 @@ h1, h2, h3 {
 }
 
 /* ===== Founder ===== */
+.section-founder {
+  padding-top: clamp(4rem, 8vw, 6rem);
+  border-top: 1px solid var(--border);
+}
+
 .founder-grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
