@@ -183,6 +183,33 @@ document.querySelectorAll(".faq-item").forEach((item) => {
   });
 });
 
+// Service links → pre-fill focus area on enquiry form
+const focusSelect = document.getElementById("focus");
+
+function setFocusArea(serviceId) {
+  if (!focusSelect || !serviceId) return;
+  const option = focusSelect.querySelector(`option[value="${serviceId}"]`);
+  if (!option) return;
+  focusSelect.value = serviceId;
+  focusSelect.classList.add("prefilled");
+}
+
+document.querySelectorAll("[data-service]").forEach((link) => {
+  link.addEventListener("click", () => {
+    setFocusArea(link.dataset.service);
+    sessionStorage.setItem("rc-focus", link.dataset.service);
+  });
+});
+
+if (focusSelect) {
+  const savedFocus = sessionStorage.getItem("rc-focus");
+  if (savedFocus) setFocusArea(savedFocus);
+
+  focusSelect.addEventListener("change", () => {
+    focusSelect.classList.toggle("prefilled", focusSelect.value !== "");
+  });
+}
+
 // Contact form
 const form = document.getElementById("contact-form");
 const formNote = document.getElementById("form-note");
@@ -191,6 +218,8 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   formNote.hidden = false;
   form.reset();
+  focusSelect?.classList.remove("prefilled");
+  sessionStorage.removeItem("rc-focus");
   const btn = form.querySelector("button[type=submit]");
   btn.disabled = true;
   btn.textContent = "Request Sent";
