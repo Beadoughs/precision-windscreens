@@ -107,51 +107,6 @@ if (serviceTypeSelect) {
   });
 }
 
-// Reviews carousel
-const reviewsTrack = document.getElementById("reviews-track");
-const reviewPrev = document.getElementById("review-prev");
-const reviewNext = document.getElementById("review-next");
-const reviewDots = document.getElementById("review-dots");
-
-if (reviewsTrack) {
-  const reviews = reviewsTrack.querySelectorAll(".review-card");
-  let currentReview = 0;
-  let autoplayTimer;
-
-  reviews.forEach((_, i) => {
-    const dot = document.createElement("button");
-    dot.className = `review-dot${i === 0 ? " active" : ""}`;
-    dot.setAttribute("aria-label", `Go to review ${i + 1}`);
-    dot.addEventListener("click", () => goToReview(i));
-    reviewDots.appendChild(dot);
-  });
-
-  const dots = reviewDots.querySelectorAll(".review-dot");
-
-  function goToReview(index) {
-    currentReview = ((index % reviews.length) + reviews.length) % reviews.length;
-    reviewsTrack.style.transform = `translateX(-${currentReview * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle("active", i === currentReview));
-  }
-
-  function startAutoplay() {
-    clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(() => goToReview(currentReview + 1), 5000);
-  }
-
-  reviewPrev.addEventListener("click", () => {
-    goToReview(currentReview - 1);
-    startAutoplay();
-  });
-
-  reviewNext.addEventListener("click", () => {
-    goToReview(currentReview + 1);
-    startAutoplay();
-  });
-
-  startAutoplay();
-}
-
 // Commitment tabs
 const tabBtns = document.querySelectorAll(".tab-btn");
 const tabPanels = document.querySelectorAll(".tab-panel");

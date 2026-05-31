@@ -496,11 +496,21 @@ h3 { font-size: 1.125rem; font-weight: 600; }
   color: var(--text-on-light);
 }
 
-.section-reviews,
-.section-commitments,
-.section-faq {
+.section-commitments {
   background: var(--silver-bg);
   color: var(--text-on-light);
+}
+
+.section-reviews {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #B8E4F9 0%, #87CEEB 55%, #9EDFFF 100%);
+  color: var(--text-on-light);
+}
+
+.section-reviews .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-why h2,
@@ -512,9 +522,7 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 .section-reviews h2,
 .section-reviews h3,
 .section-commitments h2,
-.section-commitments h3,
-.section-faq h2,
-.section-faq h3 {
+.section-commitments h3 {
   color: var(--blue-dark);
 }
 
@@ -522,16 +530,14 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 .section-links .section-eyebrow,
 .section-book .section-eyebrow,
 .section-reviews .section-eyebrow,
-.section-commitments .section-eyebrow,
-.section-faq .section-eyebrow {
+.section-commitments .section-eyebrow {
   color: var(--blue-medium);
 }
 
 .section-why .why-copy p,
 .section-book .book-info > p,
 .section-reviews .section-header p,
-.section-commitments .section-header p,
-.section-faq .section-header p {
+.section-commitments .section-header p {
   color: var(--text-muted-light);
 }
 
@@ -550,6 +556,25 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 }
 
 .section-services .section-header p {
+  color: var(--text-muted);
+}
+
+/* ===== FAQ section (dark blue) ===== */
+.section-faq {
+  background: linear-gradient(180deg, var(--blue-dark) 0%, var(--blue-deeper) 100%);
+  color: var(--text);
+}
+
+.section-faq h2,
+.section-faq h3 {
+  color: var(--white);
+}
+
+.section-faq .section-eyebrow {
+  color: var(--accent);
+}
+
+.section-faq .section-header p {
   color: var(--text-muted);
 }
 
@@ -673,16 +698,102 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 
 /* ===== Reviews ===== */
 
-.reviews-carousel { overflow: hidden; }
+.reviews-clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
 
-.reviews-track {
-  display: flex;
-  transition: transform 0.5s var(--ease);
+.cloud {
+  position: absolute;
+  width: 140px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 100px;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 52px;
+  height: 52px;
+  top: -26px;
+  left: 18px;
+}
+
+.cloud::after {
+  width: 42px;
+  height: 42px;
+  top: -20px;
+  right: 22px;
+}
+
+.cloud--1 {
+  top: 8%;
+  left: 4%;
+  opacity: 0.75;
+  transform: scale(1.1);
+}
+
+.cloud--2 {
+  top: 18%;
+  right: 6%;
+  width: 110px;
+  height: 36px;
+  opacity: 0.6;
+}
+
+.cloud--2::before {
+  width: 42px;
+  height: 42px;
+  top: -22px;
+  left: 14px;
+}
+
+.cloud--2::after {
+  width: 34px;
+  height: 34px;
+  top: -16px;
+  right: 16px;
+}
+
+.cloud--3 {
+  bottom: 12%;
+  left: 12%;
+  width: 160px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+.cloud--3::before {
+  width: 58px;
+  height: 58px;
+  top: -30px;
+  left: 24px;
+}
+
+.cloud--3::after {
+  width: 48px;
+  height: 48px;
+  top: -24px;
+  right: 28px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
 .review-card {
-  flex: 0 0 100%;
-  padding: 2rem;
+  padding: 1.5rem;
   background: var(--card-bg);
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
@@ -697,10 +808,10 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 }
 
 .review-card p {
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.65;
-  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
   font-style: italic;
 }
 
@@ -717,60 +828,12 @@ h3 { font-size: 1.125rem; font-weight: 600; }
   color: var(--gray-400);
 }
 
-.reviews-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.review-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--border-strong);
-  background: rgba(255, 255, 255, 0.08);
-  font-size: 1.5rem;
-  line-height: 1;
-  color: var(--accent);
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.review-btn:hover {
-  background: var(--blue-medium);
-  border-color: var(--blue-medium);
-  color: var(--white);
-}
-
-.review-dots {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.review-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.review-dot.active {
-  background: var(--accent);
-  transform: scale(1.25);
-}
-
 .section-reviews .review-card {
-  background: var(--card-bg-light);
-  border-color: var(--border-light);
+  background: var(--white);
+  border-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  box-shadow: var(--shadow-light-sm);
+  box-shadow: 0 4px 20px rgba(26, 29, 92, 0.1);
 }
 
 .section-reviews .review-card p {
@@ -787,26 +850,6 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 
 .section-reviews .review-stars {
   color: var(--blue-medium);
-}
-
-.section-reviews .review-btn {
-  background: var(--white);
-  border-color: var(--border-light-strong);
-  color: var(--blue-medium);
-}
-
-.section-reviews .review-btn:hover {
-  background: var(--blue-medium);
-  border-color: var(--blue-medium);
-  color: var(--white);
-}
-
-.section-reviews .review-dot {
-  background: rgba(46, 49, 146, 0.2);
-}
-
-.section-reviews .review-dot.active {
-  background: var(--blue-medium);
 }
 
 /* ===== Why us ===== */
@@ -1081,11 +1124,11 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 }
 
 .section-faq .faq-item {
-  background: var(--card-bg-light);
-  border-color: var(--border-light);
+  background: var(--white);
+  border: 1px solid var(--border-light-strong);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  box-shadow: var(--shadow-light-sm);
+  box-shadow: var(--shadow-light-md);
 }
 
 .section-faq .faq-item summary {
@@ -1093,7 +1136,7 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 }
 
 .section-faq .faq-item summary::after {
-  color: var(--blue-medium);
+  color: var(--blue);
 }
 
 .section-faq .faq-item p {
@@ -1296,6 +1339,7 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .service-cards { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .link-cards { grid-template-columns: 1fr; }
   .book-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1350,6 +1394,11 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 
   .service-options { grid-template-columns: repeat(2, 1fr); }
   .service-cards { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  .cloud--1 { top: 4%; left: -2%; transform: scale(0.85); }
+  .cloud--2 { top: 10%; right: -4%; }
+  .cloud--3 { bottom: 6%; left: -6%; }
 
   .location-row { flex-direction: column; }
   .btn-finder { width: 100%; }
@@ -1372,6 +1421,5 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { transition: opacity 0.3s; transform: none; }
-  .reviews-track { transition: none; }
   html { scroll-behavior: auto; }
 }
