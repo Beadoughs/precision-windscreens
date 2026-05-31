@@ -31,8 +31,35 @@ navLinks.querySelectorAll("a").forEach((link) => {
     navLinks.classList.remove("open");
     navToggle.classList.remove("active");
     navToggle.setAttribute("aria-expanded", "false");
+    closeNavDropdown();
   });
 });
+
+// WINDSCREENS dropdown (mobile + keyboard)
+const navDropdown = document.querySelector(".nav-dropdown");
+const navDropdownToggle = document.getElementById("nav-windscreens-toggle");
+
+function closeNavDropdown() {
+  if (!navDropdown || !navDropdownToggle) return;
+  navDropdown.classList.remove("is-open");
+  navDropdownToggle.setAttribute("aria-expanded", "false");
+}
+
+if (navDropdown && navDropdownToggle) {
+  navDropdownToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = navDropdown.classList.toggle("is-open");
+    navDropdownToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!navDropdown.contains(e.target)) closeNavDropdown();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeNavDropdown();
+  });
+}
 
 // Scroll reveal
 const revealObserver = new IntersectionObserver(

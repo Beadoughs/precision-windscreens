@@ -25,13 +25,13 @@
     "name": "Precision Windscreens & Auto Glass",
     "description": "Vehicle glass repair, windscreen replacement and mobile auto glass services.",
     "areaServed": { "@type": "Country", "name": "Australia" },
-    "telephone": "1800 737 463"
+    "telephone": "0419 507 803"
   }
   </script>
 </head>
 <body>
   <div class="emergency-bar">
-    <p>Broken windscreen? Call us now on <a href="tel:1800737463">1800 PRE WIND</a></p>
+    <p>Broken windscreen? Call us now on <a href="tel:0419507803">0419 507 803</a></p>
   </div>
 
   <header class="header" id="header">
@@ -41,15 +41,23 @@
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="#why-us">Why Us</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown-toggle" id="nav-windscreens-toggle" aria-expanded="false" aria-controls="nav-windscreens-menu">WINDSCREENS</button>
+          <ul class="nav-dropdown-menu" id="nav-windscreens-menu" role="menu" aria-label="Windscreens">
+            <li role="none"><a href="#windscreens-cars" role="menuitem">CARS</a></li>
+            <li role="none"><a href="#windscreens-commercial" role="menuitem">COMMERCIAL</a></li>
+            <li role="none"><a href="#windscreens-trucks" role="menuitem">TRUCKS</a></li>
+            <li role="none"><a href="#windscreens-machinery" role="menuitem">MACHINERY GLASS</a></li>
+          </ul>
+        </li>
+        <li><a href="#parts-accessories">PARTS AND ACCESSORIES</a></li>
         <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#locations">Locations</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#book">CONTACT</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="tel:1800737463" class="nav-phone">
+        <a href="tel:0419507803" class="nav-phone">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          1800 PRE WIND
+          0419 507 803
         </a>
         <a href="#book" class="btn btn-primary btn-nav">Book Now</a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -113,6 +121,13 @@
     <!-- Services -->
     <section class="section section-services" id="services" aria-labelledby="services-heading">
       <div class="container">
+        <div class="page-anchors" aria-hidden="true">
+          <span id="parts-accessories" class="page-anchor"></span>
+          <span id="windscreens-cars" class="page-anchor"></span>
+          <span id="windscreens-commercial" class="page-anchor"></span>
+          <span id="windscreens-trucks" class="page-anchor"></span>
+          <span id="windscreens-machinery" class="page-anchor"></span>
+        </div>
         <div class="section-header reveal">
           <p class="section-eyebrow">Our experts are here to help</p>
           <h2 id="services-heading">Let's find the right service for you</h2>
@@ -231,7 +246,7 @@
         </div>
         <div class="cta-banner-actions">
           <a href="#book" class="btn btn-white btn-lg">Book Online</a>
-          <a href="tel:1800737463" class="btn btn-outline-white btn-lg">Call 1800 PRE WIND</a>
+          <a href="tel:0419507803" class="btn btn-outline-white btn-lg">Call 0419 507 803</a>
         </div>
       </div>
     </section>
@@ -335,7 +350,7 @@
           <div class="book-callout">
             <h3>Need help now?</h3>
             <p>We offer 24/7 emergency glass replacement.</p>
-            <a href="tel:1800737463" class="book-phone">Call 1800 PRE WIND</a>
+            <a href="tel:0419507803" class="book-phone">Call 0419 507 803</a>
           </div>
         </div>
         <form class="book-form reveal" id="contact-form" novalidate>
@@ -386,28 +401,28 @@
         </a>
         <p>Precision Windscreens &amp; Auto Glass — repair, replacement and mobile service across Australia.</p>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
+      <div class="footer-col footer-nav">
+        <h4>Menu</h4>
         <ul>
-          <li><a href="#services">Windscreen repair</a></li>
-          <li><a href="#services">Replacement</a></li>
-          <li><a href="#services">Mobile service</a></li>
-          <li><a href="#services">ADAS recalibration</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#why-us">About us</a></li>
-          <li><a href="#locations">Locations</a></li>
-          <li><a href="#faq">FAQs</a></li>
-          <li><a href="#book">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li class="footer-nav-group">
+            <span class="footer-nav-label">WINDSCREENS</span>
+            <ul>
+              <li><a href="#windscreens-cars">CARS</a></li>
+              <li><a href="#windscreens-commercial">COMMERCIAL</a></li>
+              <li><a href="#windscreens-trucks">TRUCKS</a></li>
+              <li><a href="#windscreens-machinery">MACHINERY GLASS</a></li>
+            </ul>
+          </li>
+          <li><a href="#parts-accessories">PARTS AND ACCESSORIES</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#book">CONTACT</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:1800737463">1800 PRE WIND</a></li>
+          <li><a href="tel:0419507803">0419 507 803</a></li>
           <li><a href="mailto:hello@precisionwindscreens.com.au">hello@precisionwindscreens.com.au</a></li>
         </ul>
       </div>
@@ -421,7 +436,7 @@
     </div>
   </footer>
 
-  <a href="tel:1800737463" class="sticky-call" id="sticky-call" aria-label="Call 1800 PRE WIND">
+  <a href="tel:0419507803" class="sticky-call" id="sticky-call" aria-label="Call 0419 507 803">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2"/></svg>
   </a>
 

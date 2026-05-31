@@ -27,7 +27,7 @@ python3 -m http.server 8080
 
 ## Customize
 
-- **Phone number** — Update `1800 PRE WIND` / `1800737463` throughout `index.html`
+- **Phone number** — Update `0419 507 803` / `0419507803` throughout `index.html`
 - **Email** — Change `hello@precisionwindscreens.com.au` in the footer
 - **Booking form** — Wire `js/main.js` to Formspree, your CRM, or a backend API
 - **Hero image** — Replace the Unsplash URL in `index.html` with your own photography
