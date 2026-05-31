@@ -561,21 +561,36 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 
 /* ===== FAQ section (dark blue) ===== */
 .section-faq {
+  padding: 3rem 0;
   background: linear-gradient(180deg, var(--blue-dark) 0%, var(--blue-deeper) 100%);
   color: var(--text);
 }
 
-.section-faq h2,
+.section-faq .section-header {
+  margin-bottom: 1.75rem;
+}
+
+.section-faq .section-eyebrow {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.section-faq h2 {
+  font-size: clamp(1.375rem, 2.75vw, 1.75rem);
+  color: var(--white);
+}
+
 .section-faq h3 {
   color: var(--white);
 }
 
-.section-faq .section-eyebrow {
-  color: var(--accent);
-}
-
 .section-faq .section-header p {
   color: var(--text-muted);
+}
+
+.section-faq .faq-list {
+  gap: 0.5rem;
 }
 
 /* ===== Service cards ===== */
@@ -1124,22 +1139,29 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 }
 
 .section-faq .faq-item {
+  border-radius: var(--radius);
   background: var(--white);
   border: 1px solid var(--border-light-strong);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  box-shadow: var(--shadow-light-md);
+  box-shadow: var(--shadow-light-sm);
 }
 
 .section-faq .faq-item summary {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
   color: var(--blue-dark);
 }
 
 .section-faq .faq-item summary::after {
+  font-size: 1.125rem;
   color: var(--blue);
 }
 
 .section-faq .faq-item p {
+  padding: 0 1rem 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.55;
   color: var(--text-muted-light);
 }
 
