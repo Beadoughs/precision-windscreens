@@ -1447,6 +1447,11 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 
 .footer-col a:hover { color: var(--accent); }
 
+.footer-address {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.55;
+}
+
 .footer-nav-group {
   margin-top: 0.25rem;
 }

@@ -28,7 +28,7 @@ python3 -m http.server 8080
 ## Customize
 
 - **Phone number** — Update `0419 507 803` / `0419507803` throughout `index.html`
-- **Email** — Change `hello@precisionwindscreens.com.au` in the footer
+- **Contact** — `pwascreens@bigpond.com`, `(03) 6343 4584`, `120 Forster Street, Invermay TAS`
 - **Booking form** — Wire `js/main.js` to Formspree, your CRM, or a backend API
 - **Hero image** — Replace the Unsplash URL in `index.html` with your own photography
 - **Reviews** — Update with real customer testimonials
