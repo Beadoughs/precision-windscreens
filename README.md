@@ -41,6 +41,8 @@ marketing-site/
 ├── index.html
 ├── css/styles.css
 ├── js/main.js
-├── assets/logo.svg
+├── assets/logo.png
+├── assets/favicon.png
+├── assets/apple-touch-icon.png
 └── README.md
 ```
