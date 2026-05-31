@@ -42,7 +42,10 @@ marketing-site/
 ├── css/styles.css
 ├── js/main.js
 ├── assets/logo.png
+├── assets/favicon.ico
 ├── assets/favicon.png
+├── assets/favicon-16.png
+├── assets/favicon-48.png
 ├── assets/apple-touch-icon.png
 └── README.md
 ```
