@@ -1279,6 +1279,25 @@ h3 { font-size: 1.125rem; font-weight: 600; }
   line-height: 1.55;
 }
 
+.book-contact {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.book-contact a {
+  color: var(--blue-medium);
+  font-weight: 600;
+}
+
+.book-contact a:hover { color: var(--blue-dark); }
+
+.book-contact li:last-child {
+  color: var(--text-muted-light);
+}
+
 .book-callout {
   margin-top: 1.25rem;
   padding: 1rem 1.125rem;
